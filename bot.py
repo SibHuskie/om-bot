@@ -22,7 +22,7 @@ async def test():
     await client.say("Testing? Testing...")
     
 
-# <echo <text>
+# <say <text>
 @client.command(pass_context=True)
 async def echo(ctx, *, args=None): 
     staff_role = discord.utils.get(ctx.message.server.roles, name='Staff')
@@ -32,7 +32,7 @@ async def echo(ctx, *, args=None):
     msg.set_footer(text=footer_text)
     if staff_role in author.roles or staff_role in author.roles:
         if args == None:
-            msg.add_field(name=":warning: ", value="<say <text>")
+            msg.add_field(name=":warning: ", value="<say (text)")
             await client.say(embed=msg)
         else:
             await client.say("{}".format(args))
