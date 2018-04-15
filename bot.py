@@ -16,7 +16,12 @@ async def on_ready():
     print(client.user.id)
     print("---------------")
     await client.change_presence(game=discord.Game(name='with Huskie'))
+
+@client.command()
+async def test():
+    await client.say("Testing? Testing...")
     
+
 # <echo <text>
 @client.command(pass_context=True)
 async def echo(ctx, *, args=None): 
